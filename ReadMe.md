@@ -1,0 +1,1 @@
+This is a personal project to create a command line program to write crafttweaker recipe scripts without needing to refer to crafttweaker docs for required fields
