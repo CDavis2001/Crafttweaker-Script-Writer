@@ -1,6 +1,6 @@
 read = ""
 file = open("recipes.zs", "a")
-supported_machines = ["nuclearcraft:alloyfurnace","nuclearcraft:centrifuge", "nuclearcraft:chemical_reactor", "nuclearcraft:condenser", "nuclearcraft:crystallizer", "nuclearcraft:decaygenerator", "nuclearcraft:decayhastener", "nuclearcraft:electrolyzer", "nuclearcraft:fission", "nuclearcraft:fluidenricher", "nuclearcraft:fluidextractor", "nuclearcraft:fuelreprocessor", "nuclearcraft:fusion", "nuclearcraft:heatexchanger", "nuclearcraft:fluidinfuser", "nuclearcraft:ingotformer", "nuclearcraft:irradiator", "nuclearcraft:isotopeseparator", "nuclearcraft:manufactory", "nuclearcraft:melter", "nuclearcraft:pressurizer", "nuclearcraft:rockcrusher", "nuclearcraft:saltfission", "nuclearcraft:saltmixer", "nuclearcraft:turbine", "nuclearcraft:supercooler", "techreborn:alloysmelter", "techreborn:assemblingmachine", "techreborn:centrifuge", "techreborn:chemicalreactor", "techreborn:compressor", "techreborn:distillationtower", "techreborn:extractor", "techreborn:thermalgen", "techreborn:gasgen", "techreborn:semigen", "techreborn:dieselgen", "techreborn:plasmagen", "techreborn:fluidreplicator", "techreborn:fusionreactor", "techreborn:grinder", "techreborn:implosioncompressor", "techreborn:blastfurnace", "techreborn:electrolyzer", "techreborn:industrialgrinder", "techreborn:industrialsawmill", "techreborn:platebendingmachine", "techreborn:rollingmachine", "techreborn:solidcanningmachine", "techreborn:vacuumfreezer", "techreborn:wiremill", "thermal:centrifuge", "thermal:compactor", "thermal:still", "thermal:inductionsmelter", "thermal:magmacrucible", "thermal:redstonefurnace", "thermal:redstonefurnacepyrolitic", "thermal:pulverizer", "thermal:sawmill"]
+supported_machines = ["nuclearcraft:alloyfurnace","nuclearcraft:centrifuge", "nuclearcraft:chemical_reactor", "nuclearcraft:condenser", "nuclearcraft:crystallizer", "nuclearcraft:decaygenerator", "nuclearcraft:decayhastener", "nuclearcraft:electrolyzer", "nuclearcraft:fission", "nuclearcraft:fluidenricher", "nuclearcraft:fluidextractor", "nuclearcraft:fuelreprocessor", "nuclearcraft:fusion", "nuclearcraft:heatexchanger", "nuclearcraft:fluidinfuser", "nuclearcraft:ingotformer", "nuclearcraft:irradiator", "nuclearcraft:isotopeseparator", "nuclearcraft:manufactory", "nuclearcraft:melter", "nuclearcraft:pressurizer", "nuclearcraft:rockcrusher", "nuclearcraft:saltfission", "nuclearcraft:saltmixer", "nuclearcraft:turbine", "nuclearcraft:supercooler", "techreborn:alloysmelter", "techreborn:assemblingmachine", "techreborn:centrifuge", "techreborn:chemicalreactor", "techreborn:compressor", "techreborn:distillationtower", "techreborn:extractor", "techreborn:thermalgen", "techreborn:gasgen", "techreborn:semigen", "techreborn:dieselgen", "techreborn:plasmagen", "techreborn:fluidreplicator", "techreborn:fusionreactor", "techreborn:grinder", "techreborn:implosioncompressor", "techreborn:blastfurnace", "techreborn:electrolyzer", "techreborn:industrialgrinder", "techreborn:industrialsawmill", "techreborn:platebendingmachine", "techreborn:rollingmachine", "techreborn:solidcanningmachine", "techreborn:vacuumfreezer", "techreborn:wiremill", "thermal:centrifuge", "thermal:compactor", "thermal:still", "thermal:inductionsmelter", "thermal:magmacrucible", "thermal:redstonefurnace", "thermal:redstonefurnacepyrolitic", "thermal:pulverizer", "thermal:sawmill", "advrocket:chemicalreactor"]
 while read != "end":
     print("Welcome to Crafttweaker Script Writer")
     read = input("Enter machine type or enter 'end' to exit. Or enter 'help' to print a list of options\n\t")
@@ -23,7 +23,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:centrifuge":
         line = "mods.nuclearcraft.centrifuge.addRecipe(["
@@ -39,7 +39,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:chemical_reactor":
         line = "mods.nuclearcraft.chemical_reactor.addRecipe(["
@@ -54,7 +54,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:condenser":
         line = "mods.nuclearcraft.condenser.addRecipe(["
@@ -67,7 +67,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:crystallizer":
         line = "mods.nuclearcraft.crystallizer.addRecipe(["
@@ -80,7 +80,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:decaygenerator":
         line = "mods.nuclearcraft.decay_generator.addRecipe(["
@@ -93,7 +93,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:decayhastener":
         line = "mods.nuclearcraft.decay_hastener.addRecipe(["
@@ -106,7 +106,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:electrolyzer":
         line = "mods.nuclearcraft.electrolyzer.addRecipe(["
@@ -122,7 +122,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:fission":
         line = "mods.nuclearcraft.fission.addRecipe(["
@@ -137,7 +137,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:fluidenricher":
         line = "mods.nuclearcraft.dissolver.addRecipe(["
@@ -151,7 +151,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:fluidextractor":
         line = "mods.nuclearcraft.extractor.addRecipe(["
@@ -165,7 +165,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:fuelreprocessor":
         line = "mods.nuclearcraft.fuel_reprocessor.addRecipe(["
@@ -179,7 +179,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:fusion":
         line = "mods.nuclearcraft.fusion.addRecipe(["
@@ -198,7 +198,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:heatexchanger":
         line = "mods.nuclearcraft.heat_exchanger.addRecipe(["
@@ -211,7 +211,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:fluidinfuser":
         line = "mods.nuclearcraft.infuser.addRecipe(["
@@ -225,7 +225,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:ingotformer":
         line = "mods.nuclearcraft.ingot_former.addRecipe(["
@@ -238,7 +238,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:irradiator":
         line = "mods.nuclearcraft.irradiator.addRecipe(["
@@ -253,7 +253,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:isotopeseparator":
         line = "mods.nuclearcraft.isotope_separator.addRecipe(["
@@ -267,7 +267,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:manufactory":
         line = "mods.nuclearcraft.manufactory.addRecipe(["
@@ -280,7 +280,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:melter":
         line = "mods.nuclearcraft.melter.addRecipe(["
@@ -293,7 +293,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:pressurizer":
         line = "mods.nuclearcraft.pressurizer.addRecipe(["
@@ -306,7 +306,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:rockcrusher":
         line = "mods.nuclearcraft.rock_crusher.addRecipe(["
@@ -321,7 +321,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:saltfission":
         line = "mods.nuclearcraft.salt_fission.addRecipe(["
@@ -334,7 +334,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:saltmixer":
         line = "mods.nuclearcraft.salt_mixer.addRecipe(["
@@ -349,7 +349,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:turbine":
         line = "mods.nuclearcraft.turbine.addRecipe(["
@@ -361,7 +361,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "nuclearcraft:supercooler":
         line = "mods.nuclearcraft.supercooler.addRecipe(["
@@ -374,7 +374,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + "]);"
+        line = line + "]);\n"
         file.write(line)
     elif read == "techreborn:alloysmelter":
         line = "mods.techreborn.alloySmelter.addRecipe("
@@ -387,7 +387,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:assemblingmachine":
         line = "mods.techreborn.assemblingMachine.addRecipe("
@@ -400,7 +400,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:assemblingmachine":
         line = "mods.techreborn.assemblingMachine.addRecipe("
@@ -413,7 +413,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:centrifuge":
         line = "mods.techreborn.centrifuge.addRecipe("
@@ -429,7 +429,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:chemicalreactor":
         line = "mods.techreborn.chemicalReactor.addRecipe("
@@ -442,7 +442,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:compressor":
         line = "mods.techreborn.compressor.addRecipe("
@@ -454,7 +454,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:distillationtower":
         line = "mods.techreborn.distillationTower.addRecipe("
@@ -470,7 +470,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:extractor":
         line = "mods.techreborn.extractor.addRecipe("
@@ -482,7 +482,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:thermalgen":
         line = "mods.techreborn.fluidGen.addThermalFluid("
@@ -492,7 +492,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:gasgen":
         line = "mods.techreborn.fluidGen.addGasFluid("
@@ -502,7 +502,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:semigen":
         line = "mods.techreborn.fluidGen.addSemiFluid("
@@ -512,7 +512,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:dieselgen":
         line = "mods.techreborn.fluidGen.addDieselFluid("
@@ -522,7 +522,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:plasmagen":
         line = "mods.techreborn.fluidGen.addPlasmaFluid("
@@ -532,7 +532,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:fluidreplicator":
         line = "mods.techreborn.fluidReplicator.addRecipe("
@@ -544,7 +544,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:fusionreactor":
         line = "mods.techreborn.fusionReactor.addRecipe("
@@ -558,7 +558,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:grinder":
         line = "mods.techreborn.grinder.addRecipe("
@@ -570,7 +570,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:implosioncompressor":
         line = "mods.techreborn.implosionCompressor.addRecipe("
@@ -584,7 +584,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:blastfurnace":
         line = "mods.techreborn.blastFurnace.addRecipe("
@@ -599,7 +599,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:electrolyzer":
         line = "mods.techreborn.industrialElectrolyzer.addRecipe("
@@ -615,7 +615,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:industrialgrinder":
         line = "mods.techreborn.industrialGrinder.addRecipe("
@@ -634,7 +634,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:industrialsawmill":
         line = "mods.techreborn.industrialSawmill.addRecipe("
@@ -654,7 +654,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:platebendingmachine":
         line = "mods.techreborn.plateBendingMachine.addRecipe("
@@ -666,7 +666,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:rollingmachine":
         read = input("enter y for shaped recipe, anything else for shapeless")
@@ -693,7 +693,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:solidcanningmachine":
         line = "mods.techreborn.solidCanningMachine.addRecipe("
@@ -706,7 +706,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:vacuumfreezer":
         line = "mods.techreborn.vacuumFreezer.addRecipe("
@@ -718,7 +718,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "techreborn:wiremill":
         line = "mods.techreborn.wireMill.addRecipe("
@@ -730,7 +730,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "thermal:centrifuge":
         line = "mods.thermalexpansion.Centrifuge.addRecipe("
@@ -749,10 +749,10 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "thermal:compactor":
-        read = input("enter type of recipe: coin, plate, gear, misc")
+        read = input("enter type of recipe: coin, plate, gear, misc: ")
         if read == "coin":
             line = "mods.thermalexpansion.Compactor.addMintRecipe("
         elif read == "plate"  :
@@ -771,7 +771,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "thermal:still":
         line = "mods.thermalexpansion.Refinery.addRecipe("
@@ -783,7 +783,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "thermal:inductionsmelter":
         line = "mods.thermalexpansion.InductionSmelter.addRecipe("
@@ -792,14 +792,14 @@ while read != "end":
         inputs.append(input("enter primary item input: "))
         inputs.append(input("enter primary item input: "))
         inputs.append(input("enter energy: "))
-        read = input("enter y for a secondary item")
+        read = input("enter y for a secondary item: ")
         if read == "y":
             inputs.append(input("enter secondary item output: "))
-            inputs.append(input("enter secondary item chance"))
+            inputs.append(input("enter secondary item chance: "))
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "thermal:magmacrucible":
         line = "mods.thermalexpansion.Crucible.addRecipe("
@@ -810,7 +810,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "thermal:redstonefurnace":
         line = "mods.thermalexpansion.RedstoneFurnace.addRecipe("
@@ -821,7 +821,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "thermal:redstonefurnacepyrolitic":
         line = "mods.thermalexpansion.RedstoneFurnace.addPyrolysisRecipe("
@@ -833,7 +833,7 @@ while read != "end":
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "thermal:pulverizer":
         line = "mods.thermalexpansion.Pulverizer.addRecipe("
@@ -841,14 +841,14 @@ while read != "end":
         inputs.append(input("enter item output: "))
         inputs.append(input("enter item input: "))
         inputs.append(input("enter energy: "))
-        read = input("enter y for a secondary item")
+        read = input("enter y for a secondary item: ")
         if read == "y":
             inputs.append(input("enter secondary item output: "))
-            inputs.append(input("enter secondary item chance"))
+            inputs.append(input("enter secondary item chance: "))
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
         file.write(line)
     elif read == "thermal:sawmill":
         line = "mods.thermalexpansion.Sawmill.addRecipe("
@@ -856,13 +856,29 @@ while read != "end":
         inputs.append(input("enter item output: "))
         inputs.append(input("enter item input: "))
         inputs.append(input("enter energy: "))
-        read = input("enter y for a secondary item")
+        read = input("enter y for a secondary item: ")
         if read == "y":
             inputs.append(input("enter secondary item output: "))
-            inputs.append(input("enter secondary item chance"))
+            inputs.append(input("enter secondary item chance: "))
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
-        line = line + ");"
+        line = line + ");\n"
+        file.write(line)
+    elif read == "advrocket:chemicalreactor":
+        line = "mods.advancedrocketry.ChemicalReactor.addRecipe("
+        inputs = []
+        read = int(input("enter number of outputs: "))
+        for i in range(read):
+            inputs.append(input("enter item or fluid output: "))
+        inputs.append(input("enter ticks: "))
+        inputs.append(input("enter rf/t: "))
+        read = int(input("enter number of inputs:"))
+        for i in range(read):
+            inputs.append(input("enter item or fluid input: "))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");\n\n"
         file.write(line)
 file.close()
