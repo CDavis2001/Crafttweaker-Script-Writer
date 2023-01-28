@@ -1,6 +1,6 @@
 read = ""
 file = open("recipes.zs", "a")
-supported_machines = ["nuclearcraft:alloyfurnace","nuclearcraft:centrifuge", "nuclearcraft:chemical_reactor", "nuclearcraft:condenser", "nuclearcraft:crystallizer", "nuclearcraft:decaygenerator", "nuclearcraft:decayhastener", "nuclearcraft:electrolyzer", "nuclearcraft:fission", "nuclearcraft:fluidenricher", "nuclearcraft:fluidextractor", "nuclearcraft:fuelreprocessor", "nuclearcraft:fusion", "nuclearcraft:heatexchanger", "nuclearcraft:fluidinfuser", "nuclearcraft:ingotformer", "nuclearcraft:irradiator", "nuclearcraft:isotopeseparator", "nuclearcraft:manufactory", "nuclearcraft:melter", "nuclearcraft:pressurizer", "nuclearcraft:rockcrusher", "nuclearcraft:saltfission", "nuclearcraft:saltmixer", "nuclearcraft:turbine", "nuclearcraft:supercooler", "techreborn:alloysmelter", "techreborn:assemblingmachine", "techreborn:centrifuge", "techreborn:chemicalreactor", "techreborn:compressor", "techreborn:distillationtower", "techreborn:extractor", "techreborn:thermalgen", "techreborn:gasgen", "techreborn:semigen", "techreborn:dieselgen", "techreborn:plasmagen", "techreborn:fluidreplicator", "techreborn:fusionreactor", "techreborn:grinder", "techreborn:implosioncompressor", "techreborn:blastfurnace", "techreborn:electrolyzer", "techreborn:industrialgrinder", "techreborn:industrialsawmill", "techreborn:platebendingmachine", "techreborn:rollingmachine", "techreborn:solidcanningmachine", "techreborn:vacuumfreezer", "techreborn:wiremill"]
+supported_machines = ["nuclearcraft:alloyfurnace","nuclearcraft:centrifuge", "nuclearcraft:chemical_reactor", "nuclearcraft:condenser", "nuclearcraft:crystallizer", "nuclearcraft:decaygenerator", "nuclearcraft:decayhastener", "nuclearcraft:electrolyzer", "nuclearcraft:fission", "nuclearcraft:fluidenricher", "nuclearcraft:fluidextractor", "nuclearcraft:fuelreprocessor", "nuclearcraft:fusion", "nuclearcraft:heatexchanger", "nuclearcraft:fluidinfuser", "nuclearcraft:ingotformer", "nuclearcraft:irradiator", "nuclearcraft:isotopeseparator", "nuclearcraft:manufactory", "nuclearcraft:melter", "nuclearcraft:pressurizer", "nuclearcraft:rockcrusher", "nuclearcraft:saltfission", "nuclearcraft:saltmixer", "nuclearcraft:turbine", "nuclearcraft:supercooler", "techreborn:alloysmelter", "techreborn:assemblingmachine", "techreborn:centrifuge", "techreborn:chemicalreactor", "techreborn:compressor", "techreborn:distillationtower", "techreborn:extractor", "techreborn:thermalgen", "techreborn:gasgen", "techreborn:semigen", "techreborn:dieselgen", "techreborn:plasmagen", "techreborn:fluidreplicator", "techreborn:fusionreactor", "techreborn:grinder", "techreborn:implosioncompressor", "techreborn:blastfurnace", "techreborn:electrolyzer", "techreborn:industrialgrinder", "techreborn:industrialsawmill", "techreborn:platebendingmachine", "techreborn:rollingmachine", "techreborn:solidcanningmachine", "techreborn:vacuumfreezer", "techreborn:wiremill", "thermal:centrifuge", "thermal:compactor", "thermal:still", "thermal:inductionsmelter", "thermal:magmacrucible", "thermal:redstonefurnace", "thermal:redstonefurnacepyrolitic", "thermal:pulverizer", "thermal:sawmill"]
 while read != "end":
     print("Welcome to Crafttweaker Script Writer")
     read = input("Enter machine type or enter 'end' to exit. Or enter 'help' to print a list of options\n\t")
@@ -727,6 +727,139 @@ while read != "end":
         inputs.append(input("enter item input: "))
         inputs.append(input("enter tick time: "))
         inputs.append(input("enter power in EU (1EU = 4RF): "))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");"
+        file.write(line)
+    elif read == "thermal:centrifuge":
+        line = "mods.thermalexpansion.Centrifuge.addRecipe("
+        inputs = []
+        ingredients = []
+        for i in range(4):
+            item = input("enter item input (enter end to finish): ")
+            if item == "end":
+                break
+            else:
+                ingredients.append(item)
+        inputs.append(ingredients)
+        inputs.append(input("enter item input: "))
+        inputs.append(input("enter fluid output: "))
+        inputs.append(input("enter energy: "))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");"
+        file.write(line)
+    elif read == "thermal:compactor":
+        read = input("enter type of recipe: coin, plate, gear, misc")
+        if read == "coin":
+            line = "mods.thermalexpansion.Compactor.addMintRecipe("
+        elif read == "plate"  :
+            line = "mods.thermalexpansion.Compactor.addStorageRecipe("
+        elif read == "gear"  :
+            line = "mods.thermalexpansion.Compactor.addGearRecipe("
+        elif read == "misc"  :
+            line = "mods.thermalexpansion.Compactor.addPressRecipe("
+        else:
+            print("invalid option")
+            continue
+        inputs = []
+        inputs.append(input("enter item output: "))
+        inputs.append(input("enter item input: "))
+        inputs.append(input("enter energy: "))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");"
+        file.write(line)
+    elif read == "thermal:still":
+        line = "mods.thermalexpansion.Refinery.addRecipe("
+        inputs = []
+        inputs.append(input("enter fluid output: "))
+        inputs.append(input("enter item output: "))
+        inputs.append(input("enter item input: "))
+        inputs.append(input("enter energy: "))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");"
+        file.write(line)
+    elif read == "thermal:inductionsmelter":
+        line = "mods.thermalexpansion.InductionSmelter.addRecipe("
+        inputs = []
+        inputs.append(input("enter primary item output: "))
+        inputs.append(input("enter primary item input: "))
+        inputs.append(input("enter primary item input: "))
+        inputs.append(input("enter energy: "))
+        read = input("enter y for a secondary item")
+        if read == "y":
+            inputs.append(input("enter secondary item output: "))
+            inputs.append(input("enter secondary item chance"))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");"
+        file.write(line)
+    elif read == "thermal:magmacrucible":
+        line = "mods.thermalexpansion.Crucible.addRecipe("
+        inputs = []
+        inputs.append(input("enter fluid output: "))
+        inputs.append(input("enter item input: "))
+        inputs.append(input("enter energy: "))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");"
+        file.write(line)
+    elif read == "thermal:redstonefurnace":
+        line = "mods.thermalexpansion.RedstoneFurnace.addRecipe("
+        inputs = []
+        inputs.append(input("enter item output: "))
+        inputs.append(input("enter item input: "))
+        inputs.append(input("enter energy: "))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");"
+        file.write(line)
+    elif read == "thermal:redstonefurnacepyrolitic":
+        line = "mods.thermalexpansion.RedstoneFurnace.addPyrolysisRecipe("
+        inputs = []
+        inputs.append(input("enter item output: "))
+        inputs.append(input("enter item input: "))
+        inputs.append(input("enter energy: "))
+        inputs.append(input("enter mB of Creosote output: "))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");"
+        file.write(line)
+    elif read == "thermal:pulverizer":
+        line = "mods.thermalexpansion.Pulverizer.addRecipe("
+        inputs = []
+        inputs.append(input("enter item output: "))
+        inputs.append(input("enter item input: "))
+        inputs.append(input("enter energy: "))
+        read = input("enter y for a secondary item")
+        if read == "y":
+            inputs.append(input("enter secondary item output: "))
+            inputs.append(input("enter secondary item chance"))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");"
+        file.write(line)
+    elif read == "thermal:sawmill":
+        line = "mods.thermalexpansion.Sawmill.addRecipe("
+        inputs = []
+        inputs.append(input("enter item output: "))
+        inputs.append(input("enter item input: "))
+        inputs.append(input("enter energy: "))
+        read = input("enter y for a secondary item")
+        if read == "y":
+            inputs.append(input("enter secondary item output: "))
+            inputs.append(input("enter secondary item chance"))
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
