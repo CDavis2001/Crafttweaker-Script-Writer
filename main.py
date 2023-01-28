@@ -868,9 +868,7 @@ while read != "end":
     elif read == "advrocket:chemicalreactor":
         line = "mods.advancedrocketry.ChemicalReactor.addRecipe("
         inputs = []
-        read = int(input("enter number of outputs: "))
-        for i in range(read):
-            inputs.append(input("enter item or fluid output: "))
+        inputs.append(input("enter item or fluid output: "))
         inputs.append(input("enter ticks: "))
         inputs.append(input("enter rf/t: "))
         read = int(input("enter number of inputs:"))
