@@ -1,7 +1,7 @@
 read = ""
 previous = ""
 file = open("recipes.zs", "a")
-supported_machines = ["nuclearcraft:alloyfurnace","nuclearcraft:centrifuge", "nuclearcraft:chemical_reactor", "nuclearcraft:condenser", "nuclearcraft:crystallizer", "nuclearcraft:decaygenerator", "nuclearcraft:decayhastener", "nuclearcraft:electrolyser", "nuclearcraft:fission", "nuclearcraft:fluidenricher", "nuclearcraft:fluidextractor", "nuclearcraft:fuelreprocessor", "nuclearcraft:fusion", "nuclearcraft:heatexchanger", "nuclearcraft:fluidinfuser", "nuclearcraft:ingotformer", "nuclearcraft:irradiator", "nuclearcraft:isotopeseparator", "nuclearcraft:manufactory", "nuclearcraft:melter", "nuclearcraft:pressurizer", "nuclearcraft:rockcrusher", "nuclearcraft:saltfission", "nuclearcraft:saltmixer", "nuclearcraft:turbine", "nuclearcraft:supercooler", "techreborn:alloysmelter", "techreborn:assemblingmachine", "techreborn:centrifuge", "techreborn:chemicalreactor", "techreborn:compressor", "techreborn:distillationtower", "techreborn:extractor", "techreborn:thermalgen", "techreborn:gasgen", "techreborn:semigen", "techreborn:dieselgen", "techreborn:plasmagen", "techreborn:fluidreplicator", "techreborn:fusionreactor", "techreborn:grinder", "techreborn:implosioncompressor", "techreborn:blastfurnace", "techreborn:electrolyzer", "techreborn:industrialgrinder", "techreborn:industrialsawmill", "techreborn:platebendingmachine", "techreborn:rollingmachine", "techreborn:solidcanningmachine", "techreborn:vacuumfreezer", "techreborn:wiremill", "thermal:centrifuge", "thermal:compactor", "thermal:still", "thermal:inductionsmelter", "thermal:magmacrucible", "thermal:redstonefurnace", "thermal:redstonefurnacepyrolitic", "thermal:pulverizer", "thermal:sawmill", "advrocket:chemicalreactor"]
+supported_machines = ["nuclearcraft:alloyfurnace","nuclearcraft:centrifuge", "nuclearcraft:chemical_reactor", "nuclearcraft:condenser", "nuclearcraft:crystallizer", "nuclearcraft:decaygenerator", "nuclearcraft:decayhastener", "nuclearcraft:electrolyser", "nuclearcraft:fission", "nuclearcraft:fluidenricher", "nuclearcraft:fluidextractor", "nuclearcraft:fuelreprocessor", "nuclearcraft:fusion", "nuclearcraft:heatexchanger", "nuclearcraft:fluidinfuser", "nuclearcraft:ingotformer", "nuclearcraft:irradiator", "nuclearcraft:isotopeseparator", "nuclearcraft:manufactory", "nuclearcraft:melter", "nuclearcraft:pressurizer", "nuclearcraft:rockcrusher", "nuclearcraft:saltfission", "nuclearcraft:saltmixer", "nuclearcraft:turbine", "nuclearcraft:supercooler", "techreborn:alloysmelter", "techreborn:assemblingmachine", "techreborn:centrifuge", "techreborn:chemicalreactor", "techreborn:compressor", "techreborn:distillationtower", "techreborn:extractor", "techreborn:thermalgen", "techreborn:gasgen", "techreborn:semigen", "techreborn:dieselgen", "techreborn:plasmagen", "techreborn:fluidreplicator", "techreborn:fusionreactor", "techreborn:grinder", "techreborn:implosioncompressor", "techreborn:blastfurnace", "techreborn:electrolyzer", "techreborn:industrialgrinder", "techreborn:industrialsawmill", "techreborn:platebendingmachine", "techreborn:rollingmachine", "techreborn:solidcanningmachine", "techreborn:vacuumfreezer", "techreborn:wiremill", "thermal:centrifuge", "thermal:compactor", "thermal:still", "thermal:inductionsmelter", "thermal:magmacrucible", "thermal:redstonefurnace", "thermal:redstonefurnacepyrolitic", "thermal:pulverizer", "thermal:sawmill", "advrocket:chemicalreactor", "advrocket:arcfurnace"]
 while read != "end":
     print("Welcome to Crafttweaker Script Writer")
     read = input("Please Enter one of the following options\n\tEnter Machine Type\n\tEnter 'end' to exit\n\tEnter 'repeat' for the same machine as last time\n\tEnter 'help' to print a list of options\n\nInput: ")
@@ -794,12 +794,8 @@ while read != "end":
         inputs = []
         ingredients = []
         for i in range(4):
-            item = input("enter item input (enter end to finish): ")
-            if item == "end":
-                break
-            else:
-                ingredients.append(item)
-        inputs.append(ingredients)
+            item = input("enter item ouput " + str(i+1) + ": ")
+            inputs.append(item)
         inputs.append(input("enter item input: "))
         inputs.append(input("enter fluid output: "))
         inputs.append(input("enter energy: "))
@@ -933,6 +929,21 @@ while read != "end":
     elif read == "advrocket:chemicalreactor":
         previous = read
         line = "mods.advancedrocketry.ChemicalReactor.addRecipe("
+        inputs = []
+        inputs.append(input("enter item or fluid output: "))
+        inputs.append(input("enter ticks: "))
+        inputs.append(input("enter rf/t: "))
+        read = int(input("enter number of inputs:"))
+        for i in range(read):
+            inputs.append(input("enter item or fluid input: "))
+        for text in inputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + ");\n\n"
+        file.write(line)
+    elif read == "advrocket:arcfurnace":
+        previous = read
+        line = "mods.advancedrocketry.ArcFurnace.addRecipe("
         inputs = []
         inputs.append(input("enter item or fluid output: "))
         inputs.append(input("enter ticks: "))
