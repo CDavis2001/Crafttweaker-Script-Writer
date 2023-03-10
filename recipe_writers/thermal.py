@@ -1,5 +1,9 @@
 class thermal:
     @staticmethod
+    def machine_list():
+        return ["centrifuge", "compactor", "still", "inductionsmelter", "magmacrucible", "redstonefurnace", "redstonefurnacepyrolitic", "pulverizer", "sawmill"]
+        
+    @staticmethod
     def centrifuge():
         line = "mods.thermalexpansion.Centrifuge.addRecipe("
         inputs = []

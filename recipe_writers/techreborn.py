@@ -1,5 +1,9 @@
 class techreborn:
     @staticmethod
+    def machine_list():
+        return ["alloysmelter", "assemblingmachine", "centrifuge", "chemicalreactor", "compressor", "distillationtower", "extractor", "thermalgen", "gasgen", "semigen", "dieselgen", "plasmagen", "fluidreplicator", "fusionreactor", "grinder", "implosioncompressor", "blastfurnace", "electrolyzer", "industrialgrinder", "industrialsawmill", "platebendingmachine", "rollingmachine", "solidcanningmachine", "vacuumfreezer", "wiremill"]
+    
+    @staticmethod
     def alloysmelter():
         line = "mods.techreborn.alloySmelter.addRecipe("
         inputs = []

@@ -1,5 +1,9 @@
 class nuclearcraft:
     @staticmethod
+    def machine_list():
+        return ["alloyfurnace","centrifuge", "chemicalreactor", "condenser", "crystallizer", "decaygenerator", "decayhastener", "electrolyser", "fission", "fluidenricher", "fluidextractor", "fuelreprocessor", "fusion", "heatexchanger", "fluidinfuser", "ingotformer", "irradiator", "isotopeseparator", "manufactory", "melter", "pressurizer", "rockcrusher", "saltfission", "saltmixer", "turbine", "supercooler"]
+    
+    @staticmethod
     def alloyfurnace():
         line = "mods.nuclearcraft.alloy_furnace.addRecipe(["
         inputs = []

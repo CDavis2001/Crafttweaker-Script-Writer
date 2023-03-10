@@ -1,5 +1,9 @@
 class advrocket:
     @staticmethod
+    def machine_list():
+        return ["chemicalreactor", "arcfurnace"]
+    
+    @staticmethod
     def chemicalreactor():
         line = "mods.advancedrocketry.ChemicalReactor.addRecipe("
         inputs = []
