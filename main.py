@@ -1,4 +1,8 @@
 from recipe_writers.nuclearcraft import nuclearcraft
+from recipe_writers.techreborn import techreborn
+from recipe_writers.thermal  import thermal
+from recipe_writers.advrocket import advrocket
+from recipe_writers.modularmachinery import modularmachinery
 
 read = ""
 previous = ""
@@ -17,11 +21,14 @@ while read != "end":
         for machine in supported_machines:
             print("\t- " + machine + ",")
         continue
-    elif read in supported_machines:
+    if read in supported_machines:
         previous = read
-        reads = read.split(":")
-        print("trying")
-        line = eval(reads[0] + "." + reads[1] + "()")
+        if read == "modularmachinery":
+            line = modularmachinery.add()
+        else:
+            reads = read.split(":")
+            line = eval(reads[0] + "." + reads[1] + "()")
+        
         file.write(line)
     else:
         print("Input Not Recognised")
