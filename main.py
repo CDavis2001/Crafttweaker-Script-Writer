@@ -34,9 +34,7 @@ while read != "end":
     reads = read.split(":")
     if len(reads) == 2:
         if reads[0] in supported_machines:
-            print("found mod")
             if reads[1] in supported_machines[reads[0]]:
-                print("found machine")
                 line = eval(reads[0] + "." + reads[1] + "()")
                 file.write(line)
         
