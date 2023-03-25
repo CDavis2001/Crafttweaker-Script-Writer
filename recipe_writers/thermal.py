@@ -8,12 +8,23 @@ class thermal:
         line = "mods.thermalexpansion.Centrifuge.addRecipe("
         inputs = []
         ingredients = []
-        for i in range(4):
+        try:
+            count = int(input("Enter Number of Item Outputs: "))
+        except:
+            print("Invalid Input, Defaulting to 4")
+            count = 4
+        outputs = []
+        for i in range(count):
             item = input("enter item ouput " + str(i+1) + ": ")
-            inputs.append(item)
+            outputs.append(item)
         inputs.append(input("enter item input: "))
         inputs.append(input("enter fluid output: "))
         inputs.append(input("enter energy: "))
+        line = line + "["
+        for text in outputs:
+            line = line + text + ", "
+        line = line[:-2]
+        line = line + "], "
         for text in inputs:
             line = line + text + ", "
         line = line[:-2]
@@ -50,7 +61,7 @@ class thermal:
         inputs = []
         inputs.append(input("enter fluid output: "))
         inputs.append(input("enter item output: "))
-        inputs.append(input("enter item input: "))
+        inputs.append(input("enter fluid input: "))
         inputs.append(input("enter energy: "))
         for text in inputs:
             line = line + text + ", "
