@@ -7,7 +7,6 @@ class thermal:
     def centrifuge():
         line = "mods.thermalexpansion.Centrifuge.addRecipe("
         inputs = []
-        ingredients = []
         try:
             count = int(input("Enter Number of Item Outputs: "))
         except:
