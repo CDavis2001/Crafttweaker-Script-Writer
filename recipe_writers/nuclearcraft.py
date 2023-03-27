@@ -10,6 +10,7 @@ class nuclearcraft:
         inputs.append(input("enter item input 1: "))
         inputs.append(input("enter item input 2: "))
         inputs.append(input("enter item output: "))
+        inputs.append("1")
         inputs.append(input("enter time multiplier: "))
         inputs.append(input("enter power multiplier: "))
         inputs.append(input("enter process radiation: "))
@@ -318,6 +319,7 @@ class nuclearcraft:
         inputs = []
         inputs.append(input("enter item input: "))
         inputs.append(input("enter fluid output: "))
+        inputs.append("1")
         inputs.append(input("enter time multiplier: "))
         inputs.append(input("enter power multiplier: "))
         inputs.append(input("enter process radiation: "))
