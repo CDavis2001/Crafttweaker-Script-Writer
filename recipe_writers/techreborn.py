@@ -326,7 +326,7 @@ class techreborn:
     
     @staticmethod
     def rollingmachine():
-        read = input("enter y for shaped recipe, anything else for shapeless")
+        read = input("enter y for shaped recipe, anything else for shapeless: ")
         inputs = []
         inputs.append(input("enter item output: "))
         if read == "y":
