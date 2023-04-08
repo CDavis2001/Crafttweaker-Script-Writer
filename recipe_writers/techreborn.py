@@ -331,11 +331,11 @@ class techreborn:
         inputs.append(input("enter item output: "))
         if read == "y":
             line = "mods.techreborn.rollingMachine.addShaped("
-            grid = [[]]
+            grid = [[None,None,None],[None,None,None],[None,None,None]]
             for i in range(3):
                 for j in range(3):
-                    item = input.append("enter item in slot (" + str(i) + "," + str(j) + "): ")
-                    grid[i,j] = item
+                    item = input("enter item in slot (" + str(i) + "," + str(j) + "): ")
+                    grid[i][j] = item
             inputs.append(grid)
         else:
             line = "mods.techreborn.rollingMachine.addShapeless("
@@ -348,7 +348,7 @@ class techreborn:
                     ingredients.append(item)
             inputs.append(ingredients)
         for text in inputs:
-            line = line + text + ", "
+            line = line + str(text) + ", "
         line = line[:-2]
         line = line + ");\n"
         return line
